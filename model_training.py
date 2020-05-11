@@ -15,8 +15,8 @@ def train_various_sizes(X_train, X_test, y_train, y_test, parameters, iterations
         parameters = init_parameters(X_train.shape[0])
         costs_iterations, parameters = train_classifier(X_train[:, :i], y_train[:, :i], parameters, iterations, learning_rate)
         cost_test = compute_cost(compute_A(X_test, parameters), y_test, X_test.shape[1])
-        # costs_train.append(costs_iterations["costs"][-1])
-        cost_train = compute_cost(compute_A(X_train[:, :i], parameters), y_train[:, :i], X_train[:, :i].shape[1])
+
+        costs_train.append(costs_iterations["costs"][-1])
         costs_test.append(cost_test)
         m_examples.append(i)
 
