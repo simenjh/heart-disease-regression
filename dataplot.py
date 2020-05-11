@@ -1,18 +1,21 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from sklearn import preprocessing
 
 
 def plot_dataset(X, y):
     X_reduce = PCA(X)
     # print(X_reduce[0, :].reshape(1, -1))
-    plt.scatter(X_reduce[0], X_reduce[1])
-    plt.show()
+    # plt.scatter(X_reduce[0], X_reduce[1])
+    # plt.show()
 
 
 def PCA(X):
+    X = preprocessing.scale(X)
     U, s, v = np.linalg.svd(X.T)
     U_reduce = U[:, :2]
-    # print(sum(s[:2]) / sum(s))
+    print(sum(s[:2]) / sum(s))
+    # print(X)
     X_reduce = np.dot(U_reduce.T, X.T)
     return X_reduce
 
