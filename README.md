@@ -22,6 +22,7 @@ The trained model is a linear model with the same dimensionality as the feature 
 
 The above plot demonstrates the convergence of the cost for this model. The convergence value is approx. 0.33.
 
+<br /> <br />
 
 
 ![](images/learning_curves.png?raw=true)
